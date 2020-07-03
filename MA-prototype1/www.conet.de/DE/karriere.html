@@ -455,8 +455,8 @@ var ewt_pagename = "karriere";
 		<li>Wähle Jobtyp, Standort und Technologien</li> 
 		<li>Filtere Deine Ergebnisse</li> 
 		<br></p>
-	<div id="search-form">
-<script>
+	<!-- <div id="search-form"> -->
+<!-- <script>
 $("body").on("post-body.bs.table", function() { 
 doFilter(true) 
 });
@@ -476,7 +476,10 @@ if( $(".job-table-list > li").not(".hidden").length==0) $("#jobsorry").show(); e
 //$(function() {
 //setTimeout(doFilter(), 300);
 //});
-</script>
+
+</script> -->
+
+<!-- 
 <div style="display:none;"><input id="jobtyp-history" value="all" /><input id="jobort-history" value="all" /><input id="jobtech-history" value="all" /></div>
 <ul>
 <li>
@@ -518,7 +521,7 @@ if( $(".job-table-list > li").not(".hidden").length==0) $("#jobsorry").show(); e
  <button class="button default" onclick="doFilter();" type="submit">Ergebnisse filtern</button>
  </li>
  </ul>
- </div>      
+ </div>  -->
   
  <!-- Tabellenkopf für Mobile Ansicht -->
 <!--
@@ -537,7 +540,65 @@ if( $(".job-table-list > li").not(".hidden").length==0) $("#jobsorry").show(); e
 </div>
  -->  
 <!-- Tabellenkopf für Desktopansicht -->
-<div role="table">
+
+<table class="RespTable">
+	<thead>
+	<tr>
+	<th></th>
+	<th>Job-Typ</th>
+	<th>Stellenbeschreibung</th>
+	<th>Ort</th>
+	<th>Unternehmen</th>
+	<th>Ab wann</th>
+	<th>PDF</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td class="oddCol" data-label=""><strong></strong></td>
+		<td class="textRight" data-label="Job-Typ">Beratung</td>
+		<td class="textRight oddCol" data-label="Stellenbeschreibung"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/it-consultant-identity-access-management' title='IT Consultant – Identity &amp; Access Management (m/w/d)' target='_blank'>IT Consultant &ndash; Identity- & Access Management (m/w/d)</a></strong></td>
+		<td class="textRight" data-label="Ort">Hennef</td>
+		<td class="textRight oddCol" data-label="Unternehmen">CONET Solutions GmbH</td>
+		<td class="textRight" data-label="Ab wann">ab sofort</td>
+		<td class="textRight oddCol" data-label="PDF"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></td>
+	</tr>
+	<tr>
+		<td class="oddCol" data-label=""><strong></strong></td>
+		<td class="textRight" data-label="Job-Typ">Beratung</td>
+		<td class="textRight oddCol" data-label="Stellenbeschreibung"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/it-consultant-identity-access-management' title='IT Consultant – Identity &amp; Access Management (m/w/d)' target='_blank'>IT Consultant &ndash; Identity- & Access Management (m/w/d)</a></strong></td>
+		<td class="textRight" data-label="Ort">Hennef</td>
+		<td class="textRight oddCol" data-label="Unternehmen">CONET Solutions GmbH</td>
+		<td class="textRight" data-label="Ab wann">ab sofort</td>
+		<td class="textRight oddCol" data-label="PDF"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></td>
+	</tr>
+	<tr>
+		<td class="oddCol" data-label=""><strong></strong></td>
+		<td class="textRight" data-label="Job-Typ">Beratung</td>
+		<td class="textRight oddCol" data-label="Stellenbeschreibung"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/it-consultant-identity-access-management' title='IT Consultant – Identity &amp; Access Management (m/w/d)' target='_blank'>IT Consultant &ndash; Identity- & Access Management (m/w/d)</a></strong></td>
+		<td class="textRight" data-label="Ort">Hennef</td>
+		<td class="textRight oddCol" data-label="Unternehmen">CONET Solutions GmbH</td>
+		<td class="textRight" data-label="Ab wann">ab sofort</td>
+		<td class="textRight oddCol" data-label="PDF"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></td>
+	</tr>
+	<tr>
+		<td class="oddCol" data-label=""><strong></strong></td>
+		<td class="textRight" data-label="Job-Typ">Beratung</td>
+		<td class="textRight oddCol" data-label="Stellenbeschreibung"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/it-consultant-identity-access-management' title='IT Consultant – Identity &amp; Access Management (m/w/d)' target='_blank'>IT Consultant &ndash; Identity- & Access Management (m/w/d)</a></strong></td>
+		<td class="textRight" data-label="Ort">Hennef</td>
+		<td class="textRight oddCol" data-label="Unternehmen">CONET Solutions GmbH</td>
+		<td class="textRight" data-label="Ab wann">ab sofort</td>
+		<td class="textRight oddCol" data-label="PDF"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></td>
+	</tr>
+	</tbody>
+	</table>
+	
+
+
+
+
+
+<!-- <div role="table">
 	<div role="rowgroup" id="page-table-header-xl" class="job-table-head clearfix" aria-label="Verfügbare Jobs">
 		<ul role="row">
 			<li role="columnheader" id="c1">Job-Typ</li>
@@ -566,16 +627,87 @@ if( $(".job-table-list > li").not(".hidden").length==0) $("#jobsorry").show(); e
 			<span role="cell">ab sofort</span>
 			<span role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2AJVD3W602CCHEDE/$FILE/conet-sap-abap-entwickler-hcm.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
 		</div>
+		<div role="row" data-filter="Beratung~Hennef~Andere" class='clearfix'>
+			<span role="cell">Beratung</span>
+			<span role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2A8XDZK787CCHEDE' data-clean='karriere/stellenangebote/conet-solutions-gmbh/projektleiter-it' title='IT-Projektleiter (m/w/d)' target='_blank'>IT-Projektleiter (m/w/d)</a></strong></span>
+			<span role="cell">Hennef</span> 
+			<span role="cell">CONET Solutions GmbH</span> 
+			<span role="cell">ab sofort</span>
+			<span role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2A8XDZK787CCHEDE/$FILE/CONET-IT_Projektleiter.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
+		</div>
+		<div role="row" data-filter="Software-Entwicklung~Hennef:Wien~Cisco" class="clearfix">
+			<span role="cell">Software-Entwicklung</span> 
+			<span role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2B3N9JW351CCHEDE' data-clean='karriere/stellenangebote/conet-solutions-gmbh/developer-contact-center' title='Developer Contact Center (m/w/d)' target='_blank'>Developer Contact Center (m/w/d)</a></strong></span>
+			<span role="cell">Hennef, Wien</span>
+			<span role="cell">CONET Communications GmbH</span>
+			<span role="cell">ab sofort</span>
+			<span role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2B3N9JW351CCHEDE/$FILE/CONET-Developer_Contact_Center.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
+		</div>
+
+		<div role="row" data-filter="Beratung~Hennef:München:Ludwigsburg:Berlin~SAP" class='clearfix'>
+			<span role="cell">Beratung</span>
+			<span role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2AZFCV5393CCHEDE' data-clean='karriere/stellenangebote/conet-business-consultants-gmbh/senior-consultant-sap-psm' title='(Senior) Consultant SAP PSM (m/w/d) - Haushaltsmanagement' target='_blank'>(Senior) Consultant SAP PSM (m/w/d) - Haushaltsmanagement</a></strong><spani>
+			<span role="cell">Hennef, München, Ludwigsburg, Berlin</span>
+			<span role="cell">CONET Business Consultants GmbH</span>
+			<span role="cell">ab sofort</span>
+			<span role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2AZFCV5393CCHEDE/$FILE/CONET CBC SAP PSM.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
+		</div>
+		
+		<div role="row" data-filter="Software-Entwicklung~Hennef:Ludwigsburg~SAP" class="clearfix">
+			<span role="cell">Software-Entwicklung</span>
+			<span role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2B96CT6516CCHEDE' data-clean='karriere/stellenangebote/conet-business-consultants-gmbh/abap-entwickler' title='SAP ABAP Entwickler (m/w/d)' target='_blank'>SAP ABAP Entwickler (m/w/d)</a></strong></span>
+			<span role="cell">Hennef, Ludwigsburg</span>
+			<span role="cell">CONET Business Consultants GmbH</span>
+			<span role="cell">ab sofort</span>
+			<span role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2B96CT6516CCHEDE/$FILE/conet-sap-abap-entwickler.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
+		</div>	
+		
+		<div role="row" data-filter="Systeme & Netzwerke~Niederkassel~Andere" class="clearfix">
+			<span role="cell">Systeme & Netzwerke</span>
+			<span><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2B9HECQ593CCHEDE' data-clean='karriere/stellenangebote/conet-solutions-gmbh/it-security-administrator' title='IT-Security Administrator (m/w/d)-Security Operation Center (SOC)' target='_blank'>IT-Security Administrator (m/w/d)-Security Operation Center (SOC)<br />&nbsp;</a></strong></span>
+			<span role="cell">Niederkassel</span>
+			<span role="cell">CONET Solutions GmbH</span>
+			<span role="cell">ab sofort</span>
+			<span role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2B9HECQ593CCHEDE/$FILE/CONET-IT-Security-Administrator.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
+		</div>
+		
+		<div role="row" data-filter="Ausbildung / Studium / Praktika~Frankfurt am Main~Andere" class="clearfix">
+			<span role="cell">Ausbildung / Studium / Praktika</span>
+			<span role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2BAPC6N295CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/praktikum-werkstudent-abschlussarbeit-swe' title='Praktikum / Werkstudent / Abschlussarbeit im Bereich Software-Entwicklung (m/w/d)' target='_blank'>Praktikum / Werkstudent / Abschlussarbeit im Bereich Software-Entwicklung (m/w/d)<br></a></strong></span>
+			<span role="cell">Frankfurt am Main</span>
+			<span role="cell">CONET Solutions GmbH</span>
+			<span role="cell">ab sofort</span>
+			<span role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2BAPC6N295CCHEDE/$FILE/CONET_Student SWE FFM.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
+		</div>
+		
+		<div role="row" data-filter="Beratung~Hennef~Andere" class="clearfix">
+			<span role="cell">Beratung</span>
+			<span role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2BA8FFV938CCHEDE' data-clean='karriere/stellenangebote/conet-solutions-gmbh/it-security-consultant' title='IT-Security Consultant (m/w/d)' target='_blank'>IT-Security Consultant (m/w/d)</a></strong></span>
+			<span role="cell">Hennef</span>
+			<span role="cell">CONET Solutions GmbH</span>
+			<span role="cell">ab sofort</span>
+			<span role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2BA8FFV938CCHEDE/$FILE/CONET-IT_Security_Consultant.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
+		</div>
+
+		<div role="row" data-filter="Systeme & Netzwerke~Hennef:Niederkassel:Bundesweit~Andere" class="clearfix">
+			<span role="cell">Systeme & Netzwerke</span>
+			<span role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2BC9F8S754CCHEDE' data-clean='karriere/stellenangebote/conet-services-gmbh/systemadministrator-netzwerk' title='Systemadministrator Netzwerk (m/w/d) im bundesweiten Projekteinsatz' target='_blank'>Systemadministrator Netzwerk (m/w/d) im bundesweiten Projekteinsatz<br></a></strong></span>
+			<span role="cell">Hennef, Niederkassel, Bundesweit</span>
+			<span role="cell">CONET Services GmbH</span>
+			<span role="cell">ab sofort</span>
+			<span role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2BC9F8S754CCHEDE/$FILE/CONET-Systemadministrator_Netzwerk_bundesweit_.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
+		</div>
+
 	</div>
-	</div>
+	</div> -->
 	   
 	
 	
          
  <!-- Tabellenkörper -->
-	<div role="rowgroup" id="page-table-body" class="job-table">
+	<!-- <div role="rowgroup" id="page-table-body" class="job-table">
 		<ul role="row" class="job-table-list">
-	<li role="rowgroup" data-filter="Beratung~Hennef~Andere"><ul role="row" class='clearfix'><li>Beratung</li><li role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/it-consultant-identity-access-management' title='IT Consultant – Identity &amp; Access Management (m/w/d)' target='_blank'>IT Consultant &ndash; Identity- & Access Management (m/w/d)</a></strong></li><li role="cell">Hennef</li><li role="cell">CONET Solutions GmbH</li><li role="cell">ab sofort</li><li role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
+	<li data-filter="Beratung~Hennef~Andere"><ul role="row" class='clearfix'><li>Beratung</li><li role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/it-consultant-identity-access-management' title='IT Consultant – Identity &amp; Access Management (m/w/d)' target='_blank'>IT Consultant &ndash; Identity- & Access Management (m/w/d)</a></strong></li><li role="cell">Hennef</li><li role="cell">CONET Solutions GmbH</li><li role="cell">ab sofort</li><li role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
 	<li data-filter="Beratung~Hennef~Andere"><ul role="row" class='clearfix'><li role="cell" >Beratung</li><li role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2A8XDZK787CCHEDE' data-clean='karriere/stellenangebote/conet-solutions-gmbh/projektleiter-it' title='IT-Projektleiter (m/w/d)' target='_blank'>IT-Projektleiter (m/w/d)</a></strong></li><li>Hennef</li><li>CONET Solutions GmbH</li><li>ab sofort</li><li><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2A8XDZK787CCHEDE/$FILE/CONET-IT_Projektleiter.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
 	<li data-filter="Software-Entwicklung~Hennef:München:Ludwigsburg:Berlin~SAP"><ul class='clearfix'><li>Software-Entwicklung</li><li><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2AJVD3W602CCHEDE' data-clean='Karriere/Stellenangebote/CONET-Business-Consultants-GmbH/abap-entwickler-hcm' title='SAP ABAP Entwickler HCM (m/w/d)' target='_blank'>SAP ABAP Entwickler HCM (m/w/d)</a></strong></li><li>Hennef, München, Ludwigsburg, Berlin</li><li>CONET Business Consultants GmbH</li><li>ab sofort</li><li><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2AJVD3W602CCHEDE/$FILE/conet-sap-abap-entwickler-hcm.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
 	<li data-filter="Beratung~Hennef:München:Ludwigsburg:Berlin~SAP"><ul class='clearfix'><li>Beratung</li><li><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2APMAJR710CCHEDE' data-clean='karriere/stellenangebote/conet-business-consultants-gmbh/consultant-sap-ppm' title='Consultant SAP PPM (m/w/d)' target='_blank'>Consultant SAP PPM (m/w/d)</a></strong></li><li>Hennef, München, Ludwigsburg, Berlin</li><li>CONET Business Consultants GmbH</li><li>ab sofort</li><li><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2APMAJR710CCHEDE/$FILE/conet-consultant-sap-ppm.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
@@ -658,8 +790,8 @@ if( $(".job-table-list > li").not(".hidden").length==0) $("#jobsorry").show(); e
 	<li data-filter="Vertrieb~Hennef~Andere"><ul class='clearfix'><li>Vertrieb</li><li><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2BQVDVU353CCHEDE' data-clean='Sachbearbeiter-Vertrieb-m/w/d---Bid-Management' title='Sachbearbeiter Vertrieb (m/w/d) - Bid Management' target='_blank'>Sachbearbeiter Vertrieb (m/w/d) - Bid Management</a></strong></li><li>Hennef</li><li>CONET Solutions GmbH</li><li>ab sofort</li><li><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2BQVDVU353CCHEDE/$FILE/CONET_CSol_SB_Vertrieb.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
 	</ul></div>
 
-</div>
-</div>
+</div>-->
+</div> 
 
 
 <p> </p>
