@@ -1,0 +1,4 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.conet.de	TRUE	/	FALSE	1999999999	SessionID	C30F652B2C78196F318AC52E62996CC1D78AE6B3
+

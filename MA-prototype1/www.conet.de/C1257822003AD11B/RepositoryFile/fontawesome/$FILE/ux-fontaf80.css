@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'ux';
+    src: url('ux-webfont.eot');
+    src: url('ux-webfontd41d.eot?#iefix') format('embedded-opentype'),
+         url('ux-webfont.woff2') format('woff2'),
+         url('ux-webfont.woff') format('woff'),
+         url('ux-webfont.ttf') format('truetype'),
+         url('ux-webfont.svg#arialregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="ux-font-"], [class*=" ux-font-"] {
+	font-family: 'ux';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ux-font-finger:before {
+	content: "\0041";
+}
+
+.ux-font-thumb:before {
+	content: "\0042";
+}
+
+.ux-font-cogwheels:before {
+	content: "\0043";
+}
+
+.ux-font-process:before {
+	content: "\0044";
+}
+
+.ux-font-screen:before {
+	content: "\0045";
+}
+
+.ux-font-mandollar:before {
+	content: "\0046";
+}
+
+.ux-font-devices:before {
+	content: "\0047";
+}
+
+.ux-font-manarrow:before {
+	content: "\0048";
+}
+
+.ux-font-fiori:before {
+	content: "\0049";
+}
+
+.ux-font-spersonas:before {
+	content: "\004A";
+}
+
+.ux-font-glass:before {
+	content: "\004B";
+}
+
+.ux-font-chip:before {
+	content: "\004C";
+}
+
+.ux-font-diagramm:before {
+	content: "\004D";
+}
+
+.ux-font-screenhand:before {
+	content: "\004E";
+}
+
+.ux-font-html:before {
+	content: "\004F";
+}
+
+.ux-font-coins:before {
+	content: "\0050";
+}
+
+.ux-font-truck:before {
+	content: "\0051";
+}
+
+.ux-font-guy:before {
+	content: "\0052";
+}
+
+.ux-font-house:before {
+	content: "\0053";
+}
