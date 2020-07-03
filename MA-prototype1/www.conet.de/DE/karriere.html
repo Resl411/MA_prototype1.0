@@ -103,6 +103,25 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
 
 </head>
 <body>
+	<div id="cookie-banner">Diese Webseite nutzt Cookies, um Ihnen<br />die Nutzung und Bedienung der Seite zu<br />erleichtern. <a href="CONET/Datenschutz.html" tabindex="1">Erfahren Sie mehr</a><button class="list-group-item" tabindex="1" style="background-color: #666; color: white;">Verstanden</button> 
+	</div>
+	
+	<script>
+	(function(){
+		var c = '20200630';
+		var btns = document.querySelector("#cookie-banner").querySelectorAll("button");
+		if(btns!=null) {
+			var maxAge = 60*60*24*1000;
+			for(var i=0; i<btns.length; i++){
+				btns[i].addEventListener('click', function() {
+					document.cookie="CookiesAccepted="+c+";max-age="+maxAge.toString()+";path=/";
+					document.querySelector("#cookie-banner").remove(); 
+				})
+			}
+		};
+	})();
+	</script>
+
 
 <!-- NAVIGATION  -->
 <div id="NAVI_BAR" class="outer_wrapper white">
@@ -112,7 +131,7 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
         <nav id="navbar" style="height: 60px;">
             <div class="clearfix">
 				<div>
-					<a class="skiplinknav" href="#content_center">Zum Hauptinhalt springen</a>
+					<a class="skiplinknav" href="#content_center" >Zum Hauptinhalt springen</a>
 				</div>
 
                 <div id="LOGO">
@@ -120,7 +139,7 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
 				</div>
 				
 				<div id="NAVIGATION">
-                	<ul class="sm" tabindex="0">
+                	<ul class="sm" tabindex="0" aria-label="Navigationsmenü">
                     	<!-- Top Navigation--><li><a title="CONET | IT-Beratung | IT Services" href="https://www.conet.de/C1257822003A5CD3/vwContentByKey/W28FADZD509CCHEDE" data-clean="conet">CONET</a>
 						</li>
 						<li><a title="Lösungen" href="https://www.conet.de/C1257822003A5CD3/vwContentByKey/W28FAM4L750CCHEDE" data-clean="loesungen">Lösungen</a>
@@ -146,8 +165,8 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
                     </a>
 
 					
-                    <a href="javascript:toggleSearch();"><span class="conet-de-ctg-sprites search-s"></span></a>
-					<a href="https://www.conet.de/EN/careers"><span class="conet-de-ctg-sprites flag_bubble_en"></span></a>
+                    <a href="javascript:toggleSearch();" aria-label="Stichwortsuche"><span class="conet-de-ctg-sprites search-s"></span></a>
+					<a href="https://www.conet.de/EN/careers" aria-label="Inhalte auf Englisch darstellen"><span class="conet-de-ctg-sprites flag_bubble_en"></span></a>
 
 					<a id="toggleMobileMenuButton" class="mobile_menu_button" href="javascript:toggleMobileMenu();"><span class="conet-de-ctg-sprites menu-s"></span></a>
 
@@ -192,7 +211,7 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
 	</ul>
 </div>
 
- <div id="SEARCHBOX" style="opacity: 0; margin-top: 0px;">
+<div id="SEARCHBOX" style="opacity: 0; margin-top: 0px;">
 	<div class="inner_wrapper clearfix">
     	<div class="searchbox">       
 			<form id="search" name="Search" onsubmit="return checkInput('searchinput')" action="https://www.conet.de/C1257822003A5CD3/DocName/Suchergebnisse" method="get">
@@ -211,7 +230,7 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
 
 				<div class="search_wrapper">
 					<label class="invisible" for="q">Suchbegriff</label>
-					<input id="searchinput" name="q" autocomplete="on" type="text" placeholder="Suchbegriff">
+					<input id="searchinput" name="q" autocomplete="off" type="text" placeholder="Suchbegriff">
 					<button type="submit">Suche</button>
 				</div>
 			</form>
@@ -329,16 +348,20 @@ $('a[data-clean]').each(function(){
 <div class="row">
 <main id="content_center" class="col-lg-12 col-sm-12 bottom-margin-md">
 <!-- Breadcrumb -->
-<ul id="BREADCRUMB" class="clearfix" itemscope itemtype="http://schema.org/BreadcrumbList">
-<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemscope itemtype="http://schema.org/Thing" itemprop="item"  href="conet.html"><span itemprop="name">Startseite</span></a><meta content="1" itemprop="position" /></li>
-<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">&raquo; <a itemscope itemtype="http://schema.org/Thing" itemprop="item"  href="karriere.html"  title="Karriere und Jobs"><span itemprop="name">Karriere</span></a><meta content="2" itemprop="position" /></li> 
-
-</ul>
+<div id="breadcrumb-info" aria-labelledby="breadcrumb-header">
+	<header aria-hidden="false">
+		<h2 id="breadcrumb-header">Pfadangabe - Du bist hier:</h2>
+	</header>
+	<ul id="BREADCRUMB" class="clearfix" itemscope itemtype="http://schema.org/BreadcrumbList">
+	<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem"><a itemscope itemtype="http://schema.org/Thing" itemprop="item"  href="conet.html"><span itemprop="name">Startseite</span></a><meta content="1" itemprop="position" /></li>
+	<li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">&raquo; <a itemscope itemtype="http://schema.org/Thing" itemprop="item"  href="karriere.html"  title="Karriere und Jobs"><span itemprop="name">Karriere</span></a><meta content="2" itemprop="position" /></li> 
+	</ul>
+</div>
 <!-- Headline -->
 <div id="HEADLINE"><h1></h1><h2> Karriere &amp; Jobs <br /></h2></div>
 <p id="SUB_HEADLINE" class="bottom-padding-margin">Kreative Köpfe für innovative IT-Lösungen:</p>
-<p id="SUB_HEADLINE" class="bottom-padding-margin">Bei uns finden kompetente IT-Spezialisten, engagierte Berater und kaufmännisch orientierte Fachkräfte ein berufliches Zuhause,</p>
-<p id="SUB_HEADLINE" class="bottom-padding-margin">das sie fordert, aber auch fördert!</p>
+<p id="SUB_HEADLINE" class="bottom-padding-margin">Bei uns finden kompetente IT-Spezialisten, engagierte Berater und kaufmännisch orientierte Fachkräfte ein berufliches Zuhause, <br>
+	das sie fordert, aber auch fördert!</p>
 <br>
 <!-- Quicknavigation -->
 <!-- Navigator:CDE_QuickFlip -->
@@ -366,33 +389,68 @@ var DownloadFormular_Button="Downloads anzeigen";
 var DownloadFormular_Leadquelle="karriere";
 var ewt_pagename = "karriere";
 </script>
+<!-- <h2 class="detailnavi_karriere" aria-label="Detailnavigation Karriere"></h2> -->
+<div role="list" tabindex="0" class="submenu-box" aria-label="Detailnavigation Karriere">
 <div class='clearfix'><div class="row box-module">
-<div class="col-ms-4 col-sm-4"><a href="https://www.conet.de/C1257822003A5CD3/vwContentByKey/W294UHAR113CCHEDE" data-clean="karriere/conet-ist-ausgezeichnet" title="CONET ist ausgezeichnet"><div class="teaser_box">
-<div class='mediabox'>
- <picture>
- <source data-srcset='https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B100px.jpg 100w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B200px.jpg 200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B300px.jpg 300w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B400px.jpg 400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B550px.jpg 550w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B550px.jpg 700w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B550px.jpg 900w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B550px.jpg 1600w' data-lowsrc='https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B100px.jpg' data-sizes='auto' data-optimumx='1.0'/>
- <img class='mediabox-img lazyload' data-sizes='auto' data-optimumx='1.0' alt='Logo: Top Job - Arbeitgeber des Jahres 2019 - die Trophäe'/>
- </picture>
-</div><h3> <span>CONET ist ausgezeichnet </span></h3><p> Wir stellen uns immer wieder der Herausforderung, unsere Ausbildung, unsere Praktika und die Arbeit bei CONET auch extern unter die Lupe nehmen zu lassen – mit Erfolg! <br>&nbsp;</p></div></a></div>
-<div class="col-ms-4 col-sm-4"><a href="https://www.conet.de/C1257822003A5CD3/vwContentByKey/W28FHABT291CCHEDE" data-clean="karriere/chancen" title="Chancen bei CONET"><div class="teaser_box">
-<div class='mediabox'>
- <picture>
- <source data-srcset='https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B100px.jpg 100w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B200px.jpg 200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 300w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 550w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 700w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 900w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 1600w' data-lowsrc='https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B100px.jpg' data-sizes='auto' data-optimumx='1.0'/>
- <img class='mediabox-img lazyload' data-sizes='auto' data-optimumx='1.0' alt='Bild - CONET-Karriere: Erfolg. Unsere Leidenschaft.'/>
- </picture>
-</div><h3> <span>Chancen bei CONET </span></h3><p> Ob als Berufserfahrener, Hochschulabsolvent, Studierender oder als Auszubildender, CONET bietet für unterschiedlichste Zielgruppen abwechslungsreiche Tätigkeiten.</p></div></a></div>
-<div class="col-ms-4 col-sm-4"><a href="https://www.conet.de/C1257822003A5CD3/vwContentByKey/W28FHHSW141CCHEDE" data-clean="karriere/entwicklung-bei-conet" title="Entwicklung bei CONET"><div class="teaser_box">
-<div class='mediabox'>
- <picture>
- <source data-srcset='https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_B100px.jpg 100w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_B200px.jpg 200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_B300px.jpg 300w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 550w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 700w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 900w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 1600w' data-lowsrc='https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_B100px.jpg' data-sizes='auto' data-optimumx='1.0'/>
- <img class='mediabox-img lazyload' data-sizes='auto' data-optimumx='1.0' alt='Bild: Wir formen individuelle Karrieren'/>
- </picture>
-</div><h3> <span>Entwicklung bei CONET </span></h3><p> Wir formen individuelle Karrieren und bieten unseren Mitarbeitern Personalentwicklung mit System. Diese folgt einem am Bedarf des Mitarbeiters orientierten Prozess.</p></div></a></div>
+
+	<div role="listitem" class="col-ms-4 col-sm-4"><a href="https://www.conet.de/DE/karriere/arbeiten-bei-conet" title="Arbeiten bei CONET"><div class="teaser_box">
+		<div class='mediabox'>
+		 <picture>
+		<source data-srcset='https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCN050CCHEDE/$FILE/Web_UX_6_1500x1000_B100px.jpg 100w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCN050CCHEDE/$FILE/Web_UX_6_1500x1000_B200px.jpg 200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCN050CCHEDE/$FILE/Web_UX_6_1500x1000_B300px.jpg 300w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCN050CCHEDE/$FILE/Web_UX_6_1500x1000_B400px.jpg 400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCN050CCHEDE/$FILE/Web_UX_6_1500x1000_B550px.jpg 550w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCN050CCHEDE/$FILE/Web_UX_6_1500x1000_B700px.jpg 700w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCN050CCHEDE/$FILE/Web_UX_6_1500x1000_B900px.jpg 900w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCN050CCHEDE/$FILE/Web_UX_6_1500x1000_B900px.jpg 1600w' data-lowsrc='https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCN050CCHEDE/$FILE/Web_UX_6_1500x1000_B100px.jpg' data-sizes='auto' data-optimumx='1.0'/>
+			<img class='mediabox-img lazyload' data-sizes='auto' data-optimumx='1.0' alt=''/>
+		 </picture>
+		</div><h3> <span aria-hidden="true">Arbeiten bei CONET </span></h3></div></a>
+	</div>
+		
+	<div role="listitem" class="col-ms-4 col-sm-4"><a href="https://www.conet.de/DE/karriere/chancen" title="Chancen bei CONET"><div class="teaser_box">
+	<div class='mediabox'>
+	<picture>
+	<source data-srcset='https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B100px.jpg 100w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B200px.jpg 200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 300w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 550w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 700w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 900w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B300px.jpg 1600w' data-lowsrc='https://www.conet.de/C1257822003AF551/vwContentByKey/W2AXNH39134CCHEDE/$FILE/Web-Leidenschaft-CONET-2018_B100px.jpg' data-sizes='auto' data-optimumx='1.0'/>
+	<img class='mediabox-img lazyload' data-sizes='auto' data-optimumx='1.0' alt=''/>
+	</picture>
+	</div><h3> <span aria-hidden="true">Chancen bei CONET </span></h3></div></a></div>
+
+	<div role="listitem" class="col-ms-4 col-sm-4"><a href="https://www.conet.de/DE/karriere/entwicklung-bei-conet" title="Entwicklung bei CONET"><div class="teaser_box">
+		<div class='mediabox'>
+		<picture>
+		<source data-srcset='https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_B100px.jpg 100w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_B200px.jpg 200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_B300px.jpg 300w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 550w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 700w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 900w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_header_B1800px.jpg 1600w' data-lowsrc='https://www.conet.de/C1257822003AF551/vwContentByKey/W2942FZ8461CCHEDE/$FILE/Web-Karriere_B100px.jpg' data-sizes='auto' data-optimumx='1.0'/>
+		<img class='mediabox-img lazyload' data-sizes='auto' data-optimumx='1.0' alt=''/>
+		</picture>
+		</div><h3> <span aria-hidden="true">Entwicklung bei CONET </span></h3></div></a></div>
+		</div>
 </div>
+	<div class='clearfix'><div class="row box-module">
+	<div role="listitem" class="col-ms-4 col-sm-4"><a href="https://www.conet.de/DE/karriere/conet-zahlt-sich-aus" title="CONET zahlt sich aus"><div class="teaser_box">
+		<div class='mediabox'>
+		<picture>
+		<source data-srcset='https://www.conet.de/C1257822003AF551/vwContentByKey/W2BECFBG354CCHEDE/$FILE/Business-Analytics-Smartphone-Notebook_B100px.jpg 100w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BECFBG354CCHEDE/$FILE/Business-Analytics-Smartphone-Notebook_B200px.jpg 200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BECFBG354CCHEDE/$FILE/Business-Analytics-Smartphone-Notebook_B300px.jpg 300w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BECFBG354CCHEDE/$FILE/Business-Analytics-Smartphone-Notebook_B400px.jpg 400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BECFBG354CCHEDE/$FILE/Business-Analytics-Smartphone-Notebook_B550px.jpg 550w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BECFBG354CCHEDE/$FILE/Business-Analytics-Smartphone-Notebook_B700px.jpg 700w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BECFBG354CCHEDE/$FILE/Business-Analytics-Smartphone-Notebook_B900px.jpg 900w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BECFBG354CCHEDE/$FILE/Business-Analytics-Smartphone-Notebook_B1600px.jpg 1600w' data-lowsrc='https://www.conet.de/C1257822003AF551/vwContentByKey/W2BECFBG354CCHEDE/$FILE/Business-Analytics-Smartphone-Notebook_B100px.jpg' data-sizes='auto' data-optimumx='1.0'/>
+		<img class='mediabox-img lazyload' data-sizes='auto' data-optimumx='1.0' alt=''/>
+		</picture>
+		</div><h3> <span aria-hidden="true">CONET zahlt sich aus </span></h3></div></a></div>
+
+	<div role="listitem" class="col-ms-4 col-sm-4"><a href="https://www.conet.de/DE/karriere/conet-ist-ausgezeichnet" title="CONET ist ausgezeichnet"><div class="teaser_box">
+	<div class='mediabox'>
+	<picture>
+	<source data-srcset='https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B100px.jpg 100w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B200px.jpg 200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B300px.jpg 300w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B400px.jpg 400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B550px.jpg 550w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B550px.jpg 700w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B550px.jpg 900w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B550px.jpg 1600w' data-lowsrc='https://www.conet.de/C1257822003AF551/vwContentByKey/W2BAWUD2419CCHEDE/$FILE/TOP_JOB_2019_Arbeitgeber-des-Jahres_Trophaee_RBG-600x400_B100px.jpg' data-sizes='auto' data-optimumx='1.0'/>
+	<img class='mediabox-img lazyload' data-sizes='auto' data-optimumx='1.0' alt='Top Job - Arbeitgeber des Jahres 2019'/>
+	</picture>
+	</div><h3> <span aria-hidden="true">CONET ist ausgezeichnet </span></h3></div></a></div>
+
+	<div role="listitem" class="col-ms-4 col-sm-4"><a href="https://www.conet.de/DE/karriere/conet-ist-ausgezeichnet" title="Events Karriere"><div class="teaser_box">
+		<div class='mediabox'>
+		<picture>
+		<source data-srcset='https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_B100px.jpg 100w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_B200px.jpg 200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_B300px.jpg 300w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_B400px.jpg 400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_B550px.jpg 550w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_header_B600px.jpg 600w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_B700px.jpg 700w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_header_B800px.jpg 800w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_B900px.jpg 900w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_header_B1000px.jpg 1000w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_header_B1200px.jpg 1200w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_header_B1400px.jpg 1400w,https://www.conet.de/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_header_B1400px.jpg 1600w,/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_header_B1400px.jpg 1800w' data-lowsrc='/C1257822003AF551/vwContentByKey/W2A7EMCD779CCHEDE/$FILE/Web_UX_3_1500x1000_B100px.jpg' data-sizes='auto' data-optimumx='1.0'/>
+		<img class='mediabox-img lazyload' data-sizes='auto' data-optimumx='1.0' alt=''/>
+		</picture>
+		</div><h3> <span aria-hidden="true">Events Karriere </span></h3></div></a></div>
+	</div>
+	</div>
 </div>
+
+
 <div class='clearfix'><!-- HTTPOperations debug message : http://192.168.27.50/group/conet_director.nsf/DIRECTOR.xsp?qname=Karriere_full&lg=DE&j=1&tkd=KD&u=%2FC1257822003A5CD3%2FCurrentBaseLink%2FW28FFJEJ837CCHEDE&.  (HTTPOperationsConnector CMS 10.0 using URLConnection Implementation)--><!-- Suchformular -->
-	<h3>Aktuelle Stellenangebote</h3>
-	<p>Finde die passende Position für Dich!
+	<h3>Aktuelle Stellenangebote der CONET-Unternehmensgruppe</h3>
+	<p class="passende_position">Finde die passende Position für Dich!
 		<ul></ul> 
 		<li>Wähle Jobtyp, Standort und Technologien</li> 
 		<li>Filtere Deine Ergebnisse</li> 
@@ -462,20 +520,7 @@ if( $(".job-table-list > li").not(".hidden").length==0) $("#jobsorry").show(); e
  </ul>
  </div>      
   
-<!-- Tabellenkopf für Desktopansicht -->
-<div role="table">
-	<div id="page-table-header-xl" class="job-table-head clearfix" aria-label="Verfügbare Jobs">
-		<ul role="row">
-			<li role="columnheader" id="c1">Job-Typ</li>
-			<li role="columnheader" id="c2">Stellenbeschreibung</li>
-			<li role="columnheader" id="c3">Ort</li>
-			<li role="columnheader" id="c4">Unternehmen</li>
-			<li	role="columnheader" id="c5">Ab wann</li>
-			<li role="columnheader" id="c6">&nbsp;</li>
-		</ul>
-	</div>
-            
-<!-- Tabellenkopf für Mobile Ansicht -->
+ <!-- Tabellenkopf für Mobile Ansicht -->
 <!--
 <div id="page-table-header-sm" class="job-table-head clearfix">
     <form>
@@ -490,11 +535,39 @@ if( $(".job-table-list > li").not(".hidden").length==0) $("#jobsorry").show(); e
         <button type="submit" class="button default">Sortieren</button>
     </form>
 </div>
- -->           
+ -->  
+<!-- Tabellenkopf für Desktopansicht -->
+<div role="table">
+	<div role="rowgroup" id="page-table-header-xl" class="job-table-head clearfix" aria-label="Verfügbare Jobs">
+		<ul role="row">
+			<li role="columnheader" id="c1">Job-Typ</li>
+			<li role="columnheader" id="c2">Stellenbeschreibung</li>
+			<li role="columnheader" id="c3">Ort</li>
+			<li role="columnheader" id="c4">Unternehmen</li>
+			<li	role="columnheader" id="c5">Ab wann</li>
+			<li role="columnheader" id="c6">&nbsp;</li>
+		</ul>
+	</div>
+	<div role="rowgroup" id="page-table-body" class="job-table">
+	<div role="rowgroup" class="job-table-list" >
+		<div role="row" data-filter="Beratung~Hennef~Andere" class="clearfix">
+			<span role="cell">Beratung</span>
+			<span role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/it-consultant-identity-access-management' title='IT Consultant – Identity &amp; Access Management (m/w/d)' target='_blank'>IT Consultant &ndash; Identity- & Access Management (m/w/d)</a></strong> </span><span role="cell">Hennef</span><span role="cell">CONET Solutions GmbH</span><span role="cell">ab sofort</span><span role="cell"></span><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></span>
+			<span role="cell">laaa</span>
+			<span role="cell">laaa</span>
+			<span role="cell">laaa</span>
+			<span role="cell">laaa</span>
+		</div>
+	</div>
+	</div>
+	   
+	
+	
+         
  <!-- Tabellenkörper -->
 	<div role="rowgroup" id="page-table-body" class="job-table">
 		<ul role="row" class="job-table-list">
-	<li data-filter="Beratung~Hennef~Andere"><ul role="row" class='clearfix'><li role="cell" aria-labelledby="c1">Beratung</li><li role="cell" aria-labelledby="c2" ><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/it-consultant-identity-access-management' title='IT Consultant – Identity &amp; Access Management (m/w/d)' target='_blank'>IT Consultant &ndash; Identity- & Access Management (m/w/d)</a></strong></li><li>Hennef</li><li>CONET Solutions GmbH</li><li>ab sofort</li><li><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
+	<li role="rowgroup" data-filter="Beratung~Hennef~Andere"><ul role="row" class='clearfix'><li>Beratung</li><li role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE' data-clean='karriere/arbeiten-bei-conet/conet-solutions-gmbh/it-consultant-identity-access-management' title='IT Consultant – Identity &amp; Access Management (m/w/d)' target='_blank'>IT Consultant &ndash; Identity- & Access Management (m/w/d)</a></strong></li><li role="cell">Hennef</li><li role="cell">CONET Solutions GmbH</li><li role="cell">ab sofort</li><li role="cell"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
 	<li data-filter="Beratung~Hennef~Andere"><ul role="row" class='clearfix'><li role="cell" >Beratung</li><li role="cell"><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2A8XDZK787CCHEDE' data-clean='karriere/stellenangebote/conet-solutions-gmbh/projektleiter-it' title='IT-Projektleiter (m/w/d)' target='_blank'>IT-Projektleiter (m/w/d)</a></strong></li><li>Hennef</li><li>CONET Solutions GmbH</li><li>ab sofort</li><li><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2A8XDZK787CCHEDE/$FILE/CONET-IT_Projektleiter.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
 	<li data-filter="Software-Entwicklung~Hennef:München:Ludwigsburg:Berlin~SAP"><ul class='clearfix'><li>Software-Entwicklung</li><li><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2AJVD3W602CCHEDE' data-clean='Karriere/Stellenangebote/CONET-Business-Consultants-GmbH/abap-entwickler-hcm' title='SAP ABAP Entwickler HCM (m/w/d)' target='_blank'>SAP ABAP Entwickler HCM (m/w/d)</a></strong></li><li>Hennef, München, Ludwigsburg, Berlin</li><li>CONET Business Consultants GmbH</li><li>ab sofort</li><li><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2AJVD3W602CCHEDE/$FILE/conet-sap-abap-entwickler-hcm.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
 	<li data-filter="Beratung~Hennef:München:Ludwigsburg:Berlin~SAP"><ul class='clearfix'><li>Beratung</li><li><strong><a href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2APMAJR710CCHEDE' data-clean='karriere/stellenangebote/conet-business-consultants-gmbh/consultant-sap-ppm' title='Consultant SAP PPM (m/w/d)' target='_blank'>Consultant SAP PPM (m/w/d)</a></strong></li><li>Hennef, München, Ludwigsburg, Berlin</li><li>CONET Business Consultants GmbH</li><li>ab sofort</li><li><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W2APMAJR710CCHEDE/$FILE/conet-consultant-sap-ppm.pdf' rel='nofollow' class='button default'><img src='../C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></li></ul></li>
@@ -597,24 +670,7 @@ if( $(".job-table-list > li").not(".hidden").length==0) $("#jobsorry").show(); e
 <!--  -->
 
 
-<div id="cookie-banner">Diese Webseite nutzt Cookies, um Ihnen<br />die Nutzung und Bedienung der Seite zu<br />erleichtern. <a href="CONET/Datenschutz.html">Erfahren Sie mehr</a> <div class="list-group-item"><a> Verstanden</a></div> 
-</div>
 
-<script>
-(function(){
-	var c = '20200630';
-	var btns = document.querySelector("#cookie-banner").querySelectorAll("a");
-	if(btns!=null) {
-		var maxAge = 60*60*24*1000;
-		for(var i=0; i<btns.length; i++){
-			btns[i].addEventListener('click', function() {
-				document.cookie="CookiesAccepted="+c+";max-age="+maxAge.toString()+";path=/";
-				document.querySelector("#cookie-banner").remove(); 
-			})
-		}
-	};
-})();
-</script>
 
 
 <footer id="FOOTER">

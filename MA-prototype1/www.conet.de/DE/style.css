@@ -2,6 +2,11 @@ body {
     letter-spacing: 0.25px;
 }
 
+#cookie-banner .list-group-item {
+  font-size: 16px;
+  letter-spacing: 0.1rem;
+}
+
 #NAVIGATION {
     font-weight: bold;
 }
@@ -10,6 +15,16 @@ body {
     font-family: Roboto,Arial, Helvetica, sans-serif;
     margin-bottom: 5px;
 }
+#breadcrumb-header {
+  font-size: 14px;
+  margin-bottom: 5px;
+
+}
+
+.passende_position {
+  margin-bottom: 0px;
+}
+
 
 .skiplinknav:not(:focus) {
 
@@ -23,12 +38,38 @@ body {
     border: 0 !important;
 }
 
+/* .detailnavi_karriere {
+  visibility: hidden;
+} */
+
+.submenu-box {
+  border-radius: 1px;
+  border: #005E66;
+  border-style: ridge;
+}
+.clearfix {
+  margin-bottom: 0px;
+}
+
 .clearfix a {
     color: #005E66;
 }
-#quick_flip {
-    display: block;
+
+.teaser_box {
+    padding-top: 0px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-left: 20px;
 }
+
+/* #quick_flip {
+    display: block;
+} */
 
 .search_wrapper {
     display: inline-flex;
