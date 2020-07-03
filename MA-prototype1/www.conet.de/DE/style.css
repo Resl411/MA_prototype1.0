@@ -167,9 +167,13 @@ table {
       font-weight: bold;
         }
           
-  .RespTable td:nth-child(1) {
+  /* .RespTable td:nth-child(1) {
       font-weight: bold;
-      }
+      } */
+
+  .RespTable  {
+      border-top: 5px #005E66 solid;
+    }
 
   .RespTable td:last-child {
       border-bottom: 5px #005E66 solid;
