@@ -14,13 +14,33 @@ body {
 #SUB_HEADLINE {
     font-family: Roboto,Arial, Helvetica, sans-serif;
     margin-bottom: 5px;
+    font-weight: normal;
 }
 #breadcrumb-header {
   font-size: 14px;
   margin-bottom: 5px;
+  font-weight: normal;
 
 }
 
+#HEADLINE h1 {
+  font-weight: 400;
+  font-family: Stone-Light,Roboto,Arial,sans-serif;
+  line-height: normal;
+  font-style: normal;
+  font-size: 40px;
+  
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #005E66;
+}
 .passende_position {
   margin-bottom: 0px;
 }
@@ -44,9 +64,30 @@ body {
 
 .submenu-box {
   border-radius: 1px;
-  border: #005E66;
+  border: #009898;
   border-style: ridge;
+  color: #009898;
 }
+
+.trybox {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+
 .clearfix {
   margin-bottom: 0px;
 }
@@ -57,14 +98,14 @@ body {
 
 .teaser_box {
     padding-top: 0px;
-    padding-right: 15px;
-    padding-bottom: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-bottom: 0px;
+    padding-left: 10px;
 
     margin-top: 20px;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-bottom: 0px;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 /* #quick_flip {
@@ -120,6 +161,18 @@ body {
     }
   }
 
+  @media screen and (max-width: 500px) {
+    .box-module {
+      width: -webkit-fill-available;
+    }
+    .teaser_box {
+      padding-top: 15px;
+      margin-top: 15px;
+
+    }
+  }
+  
+
 /* @media screen and (min-width: 1001px) {
     .sm {
       display: none;
@@ -136,18 +189,20 @@ body {
 
 table {
   width: 100%;
+  margin-bottom: 40px;
 }
 
   .RespTable th {
     background: #f5f8fd;
         }
 
-@media all and (max-width:640px) {
+@media all and (max-width:1000px) {
     td  {
       margin: 8px;
     }
   .RespTable, .RespTable thead, .RespTable tbody, .RespTable tr, .RespTable th, .RespTable td {
       display: block;
+  
       }
 
   .RespTable {
@@ -188,4 +243,29 @@ table {
       }
 
     }
+
+    .button job, .button:visited, .download .btn-primary {
+      background: #fff;
+      display: inline-block;
+      color: #005E66;
+      font-weight: bold;
+      margin: 0;
+      text-decoration: none;
+      font-weight: 300;
+      -webkit-transition: all .15s;
+      transition: all .15s;
+      border-radius: 2px;
+      border-top: 1px solid #005E66;
+      border-bottom: 2px solid #005E66;
+      border-left: 1px solid #005E66;
+      border-right: 1px solid #005E66;
+      font-size: 14px;
+      line-height: 14px;
+    }
+
+  .button job a {
+      font-weight: 500;
+    }
+    
+    
     
