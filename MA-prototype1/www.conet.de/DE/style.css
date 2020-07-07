@@ -19,8 +19,13 @@ body {
 #breadcrumb-header {
   font-size: 14px;
   margin-bottom: 5px;
-  font-weight: normal;
+  font-weight: 500;
+  letter-spacing: 0.1rem;
+}
 
+#breadcrumb-info li {
+  font-weight: 500;
+  letter-spacing: 0.1rem;
 }
 
 #HEADLINE h1 {
@@ -43,6 +48,7 @@ h3 {
 }
 .passende_position {
   margin-bottom: 0px;
+  font-weight: 400;
 }
 
 
@@ -63,10 +69,11 @@ h3 {
 } */
 
 .submenu-box {
-  border-radius: 1px;
+  /*background-color: rgb(207, 207, 207);
+   border-radius: 1px;
   border: #009898;
   border-style: ridge;
-  color: #009898;
+  color: #009898; */
 }
 
 .trybox {
@@ -106,6 +113,13 @@ h3 {
     margin-right: 10px;
     margin-bottom: 0px;
     margin-left: 10px;
+
+    border-radius: 1px;
+  border: #dddddd;
+  border-radius: 6px;
+  border-style: solid;
+  border-width: 0.051rem;
+  color: #009898;
 }
 
 /* #quick_flip {
@@ -143,6 +157,12 @@ h3 {
     border-right: 1px solid transparent;
     border-top: 1px solid rgba(255,255,255,.25);
     border-bottom: 1px solid rgba(0,0,0,.25);
+}
+
+#SEARCHBOX {
+  display: none;
+  opacity: 1 !important;
+  margin-top: 60px !important;
 }
 
 /* .slide_menu {
@@ -239,8 +259,9 @@ tbody {
     tbody tr:nth-child(even) { 
       background-color: #f2f2f2 ; 
       color: #000; 
-    }
+    }    
 } 
+
 
 @media all and (max-width:1000px) {
     td  {
@@ -293,7 +314,7 @@ tbody {
 
     }
 
-    .button job, .button:visited, .download .btn-primary {
+    .button, .button:visited, .download .btn-primary {
       background: #fff;
       display: inline-block;
       color: #005E66;
@@ -312,9 +333,20 @@ tbody {
       line-height: 14px;
     }
 
-  .button job a {
-      font-weight: 500;
+  .button.job {
+      font-weight: 700;
+      font-size: medium;
+      letter-spacing: 0.15rem;
+      padding: 10px;
     }
+  .messageicon {
+    padding: 5px;
+    ;
+  }    
+ 
+  .job {
+    background-image: ;
     
+  }
     
     

@@ -165,7 +165,7 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
                     </a>
 
 					
-                    <a href="javascript:toggleSearch();" aria-label="Stichwortsuche"><span class="conet-de-ctg-sprites search-s"></span></a>
+                    <a id="toggleSearchMenuButton" href="javascript:toggleSearch();" aria-label="Stichwortsuche"><span class="conet-de-ctg-sprites search-s"></span></a>
 					<a href="https://www.conet.de/EN/careers" aria-label="Inhalte auf Englisch darstellen"><span class="conet-de-ctg-sprites flag_bubble_en"></span></a>
 
 					<a id="toggleMobileMenuButton" class="mobile_menu_button" href="javascript:toggleMobileMenu();"><span class="conet-de-ctg-sprites menu-s"></span></a>
@@ -242,6 +242,15 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
 <script type="text/javascript">
 
 	var mobileMenu = document.getElementById('mobile-menu');
+	var toggleMobileMenuButton = document.getElementById('toggleMobileMenuButton');
+
+	window.addEventListener('click', e => {
+		console.log(mobileMenu.style.display);
+		console.log(mobileMenu.contains(e.target));
+		if(mobileMenu.style.display = 'block' && !toggleMobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+			mobileMenu.style.display = 'none';
+		}
+	});
 
 	document.getElementById('toggleMobileMenuButton').addEventListener('click', () => {
 		console.log("Halli Hallo");
@@ -252,6 +261,21 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
 		else {
 			mobileMenu.style.display = 'none';
 		}
+	});
+	
+
+	var searchMenu = document.getElementById('SEARCHBOX');
+
+	document.getElementById('toggleSearchMenuButton').addEventListener('click', () => {
+		console.log("Halli Hallo");
+		console.log(searchMenu.style.display);
+		if(searchMenu.style.display === 'none' || !searchMenu.style.display) {
+			searchMenu.style.display = 'block';
+		} 
+		else {
+			searchMenu.style.display = 'none';
+		}
+		console.log(searchMenu.style.display);
 	});
 
 	var JSBaseReplicaID="group/conet.html";
@@ -365,19 +389,19 @@ $('a[data-clean]').each(function(){
 <br>
 <!-- Quicknavigation -->
 <!-- Navigator:CDE_QuickFlip -->
-<div id="quick_flip"><h2>Schnelleinstieg:</2><form><select id="quickselect">
+<!-- <div id="quick_flip"><h2>Schnelleinstieg:</2><form><select id="quickselect"> -->
 <!-- Quicknavigation  NAV_01_8FFJEJ837CCHE -->
-<option title="Arbeiten bei CONET" value="file:///C:/Users/TSteinebach/OneDrive%20-%20conet.de/MA/Prototype/Prototyp/MA-prototype1/www.conet.de/DE/karriere.html">Arbeiten bei CONET</option>
+<!-- <option title="Arbeiten bei CONET" value="file:///C:/Users/TSteinebach/OneDrive%20-%20conet.de/MA/Prototype/Prototyp/MA-prototype1/www.conet.de/DE/karriere.html">Arbeiten bei CONET</option>
 <option title="Chancen bei CONET" value="file:///C:/Users/TSteinebach/OneDrive%20-%20conet.de/MA/Prototype/Prototyp/MA-prototype1/www.conet.de/DE/karriere/chancen.html">Chancen bei CONET</option>
 <option title="Entwicklung bei CONET" value="/C1257822003A5CD3/vwContentByKey/W28FHHSW141CCHEDE" data-cleanvalue="karriere/entwicklung-bei-conet">Entwicklung bei CONET</option>
 <option title="CONET zahlt sich aus" value="/C1257822003A5CD3/vwContentByKey/W28FHL2P875CCHEDE" data-cleanvalue="karriere/conet-zahlt-sich-aus">CONET zahlt sich aus</option>
 <option title="CONET ist ausgezeichnet" value="/C1257822003A5CD3/vwContentByKey/W294UHAR113CCHEDE" data-cleanvalue="karriere/conet-ist-ausgezeichnet">CONET ist ausgezeichnet</option>
 <option title="Events Karriere" value="/C1257822003A5CD3/vwContentByKey/W28PSK9Q981CCHEDE" data-cleanvalue="karriere/karriere-events">Events Karriere</option>
 <option title="News Karriere" value="/C1257822003A5CD3/vwContentByKey/W2B62FZH042CCHEDE" data-cleanvalue="karriere/newsletter">News Karriere</option>
-<option title="Videos Karriere" value="/C1257822003A5CD3/vwContentByKey/W28Y2E7X368CCHEDE" data-cleanvalue="karriere/videos">Videos Karriere</option>
+<option title="Videos Karriere" value="/C1257822003A5CD3/vwContentByKey/W28Y2E7X368CCHEDE" data-cleanvalue="karriere/videos">Videos Karriere</option> -->
 <!-- /Quicknavigation -->
 
-</select><button class="button default" onclick="console.log($('#quickselect').val());location.href=$('#quickselect').val();return false;">Gehe zu</button></form></div>
+<!-- </select><button class="button default" onclick="console.log($('#quickselect').val());location.href=$('#quickselect').val();return false;">Gehe zu</button></form></div> -->
 <!-- Social Media -->
 <!--                    <div class="shariff"></div> -->
 <!-- Academy Table -->
@@ -537,8 +561,8 @@ var ewt_pagename = "karriere";
 	<h2>Aktuelle Stellenangebote der CONET-Unternehmensgruppe</h2>
 	<p class="passende_position">Finde die passende Position für Dich!
 		<ul></ul> 
-		<li>Wähle Jobtyp, Standort und Technologien</li> 
-		<li>Filtere Deine Ergebnisse</li> 
+		<li style="font-weight: 400;">Wähle Jobtyp, Standort und Technologien</li> 
+		<li style="font-weight: 400;">Filtere Deine Ergebnisse</li> 
 		<br></p>
 	<div id="search-form">
 <script>
@@ -610,7 +634,7 @@ if( $(".job-table-list > tr").not(".hidden").length==0) $("#jobsorry").show(); e
   
  <!-- Tabellenkopf für Mobile Ansicht -->
 
-<div id="page-table-header-sm" class="job-table-head clearfix">
+<!-- <div id="page-table-header-sm" class="job-table-head clearfix">
     <form>
         <select>
             <option>Sortieren nach:</option>
@@ -622,7 +646,7 @@ if( $(".job-table-list > tr").not(".hidden").length==0) $("#jobsorry").show(); e
         </select>
         <button type="submit" class="button default">Sortieren</button>
     </form>
-</div>
+</div> -->
   
  <!-- Tabellenkopf für Desktopansicht -->
 
@@ -969,7 +993,11 @@ Dann bewirb Dich initiativ! <br>
 
 So einfach geht's: </p>
 
-<p> </p><a class="button job" href="https://www.conet.de/DE/initiativbewerbung"  title="Jetzt bewerben">Jetzt bewerben</a>
+<p> </p>
+<a class="button job" href="https://www.conet.de/DE/initiativbewerbung"  title="Jetzt bewerben"><svg class="messageicon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+	width="50" height="50"
+	viewBox="0 0 172 172"
+	style=" fill:#000000;"><g transform=""><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#005e66"><path d="M0,24.08v123.84h172v-123.84zM6.88,30.96h158.24v8.6c-1.34375,1.16906 -61.66469,53.79031 -67.295,58.695l-0.3225,0.3225c-4.46125,3.88344 -9.03,4.6225 -11.5025,4.6225c-2.45906,0 -7.04125,-0.73906 -11.5025,-4.6225c-1.27656,-1.11531 -10.46781,-9.05687 -17.0925,-14.835c-19.65906,-17.14625 -49.51719,-43.29562 -50.525,-44.1825zM6.88,48.6975c5.96625,5.20031 27.13031,23.62313 45.15,39.345l-45.15,35.69zM165.12,48.6975v75.035l-45.15,-35.69c18.01969,-15.72187 39.18375,-34.14469 45.15,-39.345zM57.2975,92.665c4.17906,3.64156 11.73094,10.23938 12.685,11.0725l0.1075,0.1075c5.81844,4.99875 11.99969,6.235 15.91,6.235c3.93719,0 10.17219,-1.24969 16.0175,-6.3425c0.9675,-0.83312 8.57313,-7.39062 12.7925,-11.0725l50.31,39.775v8.6h-158.24v-8.6z"></path></g></g></g></svg> Jetzt bewerben</a>
 <p> </p>
 </main>
 <!-- Contactbox -->  
