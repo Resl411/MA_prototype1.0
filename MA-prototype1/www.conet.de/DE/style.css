@@ -2,6 +2,10 @@ body {
     letter-spacing: 0.25px;
 }
 
+#cookie-banner {
+  font-weight: 500;
+}
+
 #cookie-banner .list-group-item {
   font-size: 16px;
   letter-spacing: 0.1rem;
@@ -45,6 +49,7 @@ h2 {
 
 h3 {
   color: #005E66;
+  font-weight: 500;
 }
 .passende_position {
   margin-bottom: 0px;
@@ -119,7 +124,7 @@ h3 {
   border-radius: 6px;
   border-style: solid;
   border-width: 0.051rem;
-  color: #009898;
+
 }
 
 /* #quick_flip {
@@ -131,7 +136,7 @@ h3 {
 }
 
 #mobile-menu {
-    background: #009898;
+    background: #0A807E;
     position: absolute;
     width: 100%;
     z-index: 1;
@@ -188,6 +193,7 @@ h3 {
     .teaser_box {
       padding-top: 15px;
       margin-top: 15px;
+      font-weight: 500;
 
     }
   }
@@ -264,6 +270,11 @@ tbody {
 
 
 @media all and (max-width:1000px) {
+    .container.header_mobile {
+      background-color: #0A807E;
+    }
+
+
     td  {
       margin: 8px;
     }
