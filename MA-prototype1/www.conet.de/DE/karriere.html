@@ -124,7 +124,7 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
 
 
 <!-- NAVIGATION  -->
-<div id="NAVI_BAR" class="outer_wrapper white">
+<div id="NAVI_BAR" class="outer_wrapper white" role="navigation">
 
     <div class="inner_wrapper">
     
@@ -138,7 +138,7 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
                     <a href="http://www.conet.de/"><span class="conet-de-ctg-sprites conet-logo-header" title="Logo der CONET-Unternehmensgruppe"></span></a>
 				</div>
 				
-				<div id="NAVIGATION">
+				<div id="NAVIGATION" role="navigation">
                 	<ul class="sm" tabindex="0" aria-label="Navigationsmenü">
                     	<!-- Top Navigation--><li><a title="CONET | IT-Beratung | IT Services" href="https://www.conet.de/C1257822003A5CD3/vwContentByKey/W28FADZD509CCHEDE" data-clean="conet">CONET</a>
 						</li>
@@ -160,13 +160,13 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
                     <a class="navi_contact_desk" href="conet/kontakt/kontaktformular.html">
                       <span title="Kontaktformular" class="conet-de-ctg-sprites et-inv-box-green-small">
                     </a>
-                    <a class="navi_contact_desk" href="conet/newsletter.html">
+                    <!-- <a class="navi_contact_desk" href="conet/newsletter.html">
                         <span title="Newsletter" class="conet-de-ctg-sprites letter-inv-box-green-small">
-                    </a>
+                    </a> -->
 
 					
-                    <a id="toggleSearchMenuButton" href="javascript:toggleSearch();" aria-label="Stichwortsuche"><span class="conet-de-ctg-sprites search-s"></span></a>
-					<a href="https://www.conet.de/EN/careers" aria-label="Inhalte auf Englisch darstellen"><span class="conet-de-ctg-sprites flag_bubble_en"></span></a>
+                    <a role="search" id="toggleSearchMenuButton" href="javascript:toggleSearch();" title="Stichwortsuche"><span class="conet-de-ctg-sprites search-s"></span></a>
+					<a href="https://www.conet.de/EN/careers" title="Inhalte auf Englisch"><span class="conet-de-ctg-sprites flag_bubble_en"></span></a>
 
 					<a id="toggleMobileMenuButton" class="mobile_menu_button" href="javascript:toggleMobileMenu();"><span class="conet-de-ctg-sprites menu-s"></span></a>
 
@@ -213,7 +213,7 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
 
 <div id="SEARCHBOX" style="opacity: 0; margin-top: 0px;">
 	<div class="inner_wrapper clearfix">
-    	<div class="searchbox">       
+    	<div class="searchbox" style="background-color: #0A807E;">       
 			<form id="search" name="Search" onsubmit="return checkInput('searchinput')" action="https://www.conet.de/C1257822003A5CD3/DocName/Suchergebnisse" method="get">
 
 				<input name="open"  id="open" value="" type="hidden" />
@@ -228,10 +228,10 @@ text-align:center; color:white; font-weight:bold; cursor:pointer;
 				<input name="adv"  value="" type="hidden"/>
 				<input name="gs"  id="gs"  value="on"  type="hidden"/>
 
-				<div class="search_wrapper">
+				<div class="search_wrapper" style="background-color: white;">
 					<label class="invisible" for="q">Suchbegriff</label>
-					<input id="searchinput" name="q" autocomplete="off" type="text" placeholder="Suchbegriff">
-					<button type="submit">Suche</button>
+					<input id="searchinput" name="q" autocomplete="off" type="text" placeholder="Suchbegriff eingeben">
+					<button type="submit" class="searchsubmit" style="font-weight: 500; letter-spacing: 0.1rem; background-color: 005e66;">Suche</button>
 				</div>
 			</form>
         </div>
@@ -370,7 +370,7 @@ $('a[data-clean]').each(function(){
 </div>
 <div class="col-12">
 <div class="row">
-<main id="content_center" class="col-lg-12 col-sm-12 bottom-margin-md">
+<main id="content_center" class="col-lg-12 col-sm-12 bottom-margin-md" role="main" aria-label="Hauptinhalt Karriere">
 <!-- Breadcrumb -->
 <div id="breadcrumb-info" aria-labelledby="breadcrumb-header">
 	<header aria-hidden="false">
@@ -414,7 +414,7 @@ var DownloadFormular_Leadquelle="karriere";
 var ewt_pagename = "karriere";
 </script>
 <!-- <h2 class="detailnavi_karriere" aria-label="Detailnavigation Karriere"></h2> -->
-
+<NAV>
 <div role="list" tabindex="0" class="submenu-box" aria-label="Detailnavigation Karriere">
 
 
@@ -473,7 +473,7 @@ var ewt_pagename = "karriere";
 	
 	</div>
 </div>
-
+</NAV>
 
 
 
@@ -560,10 +560,11 @@ var ewt_pagename = "karriere";
 <div class='clearfix'><!-- HTTPOperations debug message : http://192.168.27.50/group/conet_director.nsf/DIRECTOR.xsp?qname=Karriere_full&lg=DE&j=1&tkd=KD&u=%2FC1257822003A5CD3%2FCurrentBaseLink%2FW28FFJEJ837CCHEDE&.  (HTTPOperationsConnector CMS 10.0 using URLConnection Implementation)--><!-- Suchformular -->
 	<h2>Aktuelle Stellenangebote der CONET-Unternehmensgruppe</h2>
 	<p class="passende_position">Finde die passende Position für Dich!
-		<ul></ul> 
+		<ul > 
 		<li style="font-weight: 400;">Wähle Jobtyp, Standort und Technologien</li> 
 		<li style="font-weight: 400;">Filtere Deine Ergebnisse</li> 
-		<br></p>
+	</ul>
+	</p>
 	<div id="search-form">
 <script>
 $("body").on("post-body.bs.table", function() { 
@@ -590,46 +591,46 @@ if( $(".job-table-list > tr").not(".hidden").length==0) $("#jobsorry").show(); e
 
 
 <div style="display:none;"><input id="jobtyp-history" value="all" /><input id="jobort-history" value="all" /><input id="jobtech-history" value="all" /></div>
-<ul>
-<li>
-<label for="jobtype">Job-Typ:</label>
-<select id="jobtype" class="input-jobs jobtyp">
-<option value="all" selected>Alle</option><option value='Ausbildung / Studium / Praktika'>Ausbildung / Studium / Praktika</option>
-<option value='Beratung'>Beratung</option>
-<option value='Software-Entwicklung'>Software-Entwicklung</option>
-<option value='Systeme & Netzwerke'>Systeme & Netzwerke</option>
-<option value='Vertrieb'>Vertrieb</option></select>
-</li>
-<li>
-<label for="standort">Standort:</label>
-<select id="standort" class="input-jobs jobort">
-<option value="all" selected>Alle</option><option value='Berlin'>Berlin</option>
-<option value='Bundesweit'>Bundesweit</option>
-<option value='Frankfurt am Main'>Frankfurt am Main</option>
-<option value='Hennef'>Hennef</option>
-<option value='Hennef und Niederkassel'>Hennef und Niederkassel</option>
-<option value='Koblenz'>Koblenz</option>
-<option value='Ludwigsburg'>Ludwigsburg</option>
-<option value='München'>München</option>
-<option value='Niederkassel'>Niederkassel</option>
-<option value='Wien'>Wien</option></select> 
-</li>
-<li>
-<label for="technologie">Technologie:</label>
-<select id="technologie" class="input-jobs jobtech">
-<option value="all" selected>Alle</option><option value='Andere'>Andere</option>
-<option value='Cisco'>Cisco</option>
-<option value='Citrix'>Citrix</option>
-<option value='Java/JEE'>Java/JEE</option>
-<option value='Microsoft'>Microsoft</option>
-<option value='Novell/Linux/Unix'>Novell/Linux/Unix</option>
-<option value='SAP'>SAP</option>
-</select>
- </li>
- <li>
- <button class="button default" onclick="doFilter();" type="submit">Ergebnisse filtern</button>
- </li>
- </ul>
+	<ul>
+	<li>
+	<label for="jobtype">Job-Typ:</label>
+	<select id="jobtype" class="input-jobs jobtyp">
+	<option value="all" selected>Alle</option><option value='Ausbildung / Studium / Praktika'>Ausbildung / Studium / Praktika</option>
+	<option value='Beratung'>Beratung</option>
+	<option value='Software-Entwicklung'>Software-Entwicklung</option>
+	<option value='Systeme & Netzwerke'>Systeme & Netzwerke</option>
+	<option value='Vertrieb'>Vertrieb</option></select>
+	</li>
+	<li>
+	<label for="standort">Standort:</label>
+	<select id="standort" class="input-jobs jobort">
+	<option value="all" selected>Alle</option><option value='Berlin'>Berlin</option>
+	<option value='Bundesweit'>Bundesweit</option>
+	<option value='Frankfurt am Main'>Frankfurt am Main</option>
+	<option value='Hennef'>Hennef</option>
+	<option value='Hennef und Niederkassel'>Hennef und Niederkassel</option>
+	<option value='Koblenz'>Koblenz</option>
+	<option value='Ludwigsburg'>Ludwigsburg</option>
+	<option value='München'>München</option>
+	<option value='Niederkassel'>Niederkassel</option>
+	<option value='Wien'>Wien</option></select> 
+	</li>
+	<li>
+	<label for="technologie">Technologie:</label>
+	<select id="technologie" class="input-jobs jobtech">
+	<option value="all" selected>Alle</option><option value='Andere'>Andere</option>
+	<option value='Cisco'>Cisco</option>
+	<option value='Citrix'>Citrix</option>
+	<option value='Java/JEE'>Java/JEE</option>
+	<option value='Microsoft'>Microsoft</option>
+	<option value='Novell/Linux/Unix'>Novell/Linux/Unix</option>
+	<option value='SAP'>SAP</option>
+	</select>
+	</li>
+	<li>
+	<button class="button default" onclick="doFilter();" type="submit">Ergebnisse filtern</button>
+	</li>
+	</ul>
  </div>
   
  <!-- Tabellenkopf für Mobile Ansicht -->
@@ -781,7 +782,7 @@ if( $(".job-table-list > tr").not(".hidden").length==0) $("#jobsorry").show(); e
 		<td class="textRight oddCol" data-label="PDF"><a  target='_blank' href='https://www.conet.de/C1257822003A5CD3/CurrentBaseLink/W29VSPCE445CCHEDE/$FILE/CONET-IT_Consultant_-_Identity_&amp;_Access_Management.pdf' rel='nofollow' class='button default'><img src='https://www.conet.de/C1257822003AD11B/RepositoryFile/css-karriere/%24File/Icon-PDF.png'>  PDF</a></td>
 	</tr>
 	</tbody>
-	</table>
+</table>
 	
 
 
@@ -991,7 +992,11 @@ if( $(".job-table-list > tr").not(".hidden").length==0) $("#jobsorry").show(); e
 <p class="passende_position">Du hast keine passende Stelle gefunden?<br>
 Dann bewirb Dich initiativ! <br> 
 
-So einfach geht's: </p>
+So einfach geht's: 
+<ul>
+	<li style="font-weight: 400;">Klicke auf "Jetzt bewerben"</li>
+	<li style="font-weight: 400;">Fülle das Formular aus</li>
+</ul></p>
 
 <p> </p>
 <a class="button job" href="https://www.conet.de/DE/initiativbewerbung"  title="Jetzt bewerben"><svg class="messageicon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
@@ -1017,7 +1022,7 @@ So einfach geht's: </p>
 
 
 
-<footer id="FOOTER" style="color: #000000; font-weight: 500;">
+<aside role="complementary" id="FOOTER" style="color: #000000; font-weight: 500;">
 <div class="container">
 <div class="row">
 <div class="col-md-4 col-sm-6 col-ms-6 col-xs-12 breakaway768">
@@ -1071,7 +1076,7 @@ So einfach geht's: </p>
 </div>
 </div>
 </div>
-</footer>
+
 
 <div id="Awards" class="container-fluid">
 <p class="mobile_landing_teaser" style="font-weight: 500; color: #000000;">Ausgezeichnet:</p>
@@ -1127,7 +1132,6 @@ So einfach geht's: </p>
 </div>
 </div>
 
-
 <div  id="social_mobile" class="container-fluid">
 <p class="h3-style" style="color: #000000; font-weight: 500;">Folgen Sie uns</p>
 <a href="https://www.facebook.com/CONET.Group" title="CONET auf Facebook" target="_blank"><span class="conet-de-ctg-sprites fb"></span></a>
@@ -1137,8 +1141,10 @@ So einfach geht's: </p>
 <a href="https://www.instagram.com/conet.group/" target="_blank" title="CONET auf Instagram"><span class="conet-de-ctg-sprites instagram"></span></a>
 <a href="https://www.kununu.com/de/conet-technologies" target="_blank" title="CONET auf Kununu"><span class="conet-de-ctg-sprites kununu"></span></a>
 </div>
+</aside>
 
 
+<footer role="contentinfo"> 
 <div id="IMPRINT" class="container-fluid">
 <div class="row">
 <ul class="col" style="background-color: #0A807E; font-weight: 500;">
@@ -1151,6 +1157,7 @@ So einfach geht's: </p>
 </ul>
 </div>
 </div>
+</footer>
 <!-- END FOOTER 
 </div>DIV 1
 </div>DIV 2-->
