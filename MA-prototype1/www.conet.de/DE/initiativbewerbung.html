@@ -102,26 +102,7 @@
 
 </head>
 <body>
-	<div id="cookie-banner">Diese Webseite nutzt Cookies, um Ihnen die Nutzung und Bedienung der Seite zu erleichtern. 
-		<a href="./back.html" tabindex="1" style="text-decoration: underline; color: #005e66;"><br> Mehr zu unserem Datenschutz</a><button class="list-group-item" tabindex="1" style="background-color: #666; color: white;">Verstanden</button> 
-	</div>
-
-	<script>
-		(function(){
-			var c = '20200630';
-			var btns = document.querySelector("#cookie-banner").querySelectorAll("button");
-			if(btns!=null) {
-				var maxAge = 60*60*24*1000;
-				for(var i=0; i<btns.length; i++){
-					btns[i].addEventListener('click', function() {
-						document.cookie="CookiesAccepted="+c+";max-age="+maxAge.toString()+";path=/";
-						document.querySelector("#cookie-banner").remove(); 
-					})
-				}
-			};
-		})();
-		</script>
-
+	
 
 <!-- NAVIGATION  -->
 <div id="NAVI_BAR" class="outer_wrapper white" role="navigation">

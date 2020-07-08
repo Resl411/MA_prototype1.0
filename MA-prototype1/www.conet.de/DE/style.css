@@ -100,13 +100,13 @@ h3 {
   visibility: hidden;
 } */
 
-.submenu-box {
+/*.submenu-box {
   /*background-color: rgb(207, 207, 207);
    border-radius: 1px;
   border: #009898;
   border-style: ridge;
-  color: #009898; */
-}
+  color: #009898; 
+}*/
 
 .trybox {
   list-style: none;
@@ -449,9 +449,6 @@ tbody {
     ;
   }    
  
-  .job {
-    background-image: ;
-    
-  }
+ 
     
     
